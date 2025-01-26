@@ -1,0 +1,67 @@
+.vessel-marker {
+  width: 10px;
+  height: 10px;
+  background-color: cyan;
+  border-radius: 50%;
+  box-shadow: 0 0 15px cyan;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px cyan;
+  }
+  50% {
+    box-shadow: 0 0 15px cyan;
+  }
+  100% {
+    box-shadow: 0 0 5px cyan;
+  }
+}
+
+.pulsating-marker {
+  position: relative;
+}
+
+.pulsating-circle {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 255, 255, 0.2); /* Light cyan */
+  border-radius: 50%;
+  border: 1px solid #ffffff37;
+  animation: pulse 2s infinite;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  z-index: 1;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: cyan; /* Cyan dot */
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+/* .h {
+  color: #;
+} */

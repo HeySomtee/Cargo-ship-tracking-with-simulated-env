@@ -1,0 +1,117 @@
+::-webkit-scrollbar
+{
+  width: 0;
+  height: 8px;
+}
+
+
+::-webkit-scrollbar-track
+{
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: #b3c8e550;
+  border-radius: 10px;
+}
+
+.VesselInfo {
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Hide scrollbar */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+.VesselInfo::-webkit-scrollbar {
+}
+
+
+/* Table styling */
+.VesselInfo table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.VesselInfo th,
+.VesselInfo td {
+  padding: 10px;
+  text-align: left;
+}
+
+.VesselInfo th {
+  font-weight: bold;
+  color: #555;
+}
+
+.VesselInfo tr:nth-child(even) {
+  /* background-color: #f9f9f9; */
+  /* color: #555; */
+}
+
+.VesselInfo tr {
+  /* background-color: #f9f9f9; */
+  color: #cecccc;
+  font-size: 14.5px;
+}
+
+.VesselInfo tbody tr:hover {
+  background-color: #f1f1f12b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.VesselInfo thead:hover {
+  background-color: transparent !important;
+  color: #555;
+}
+
+
+
+.borderless td,
+.borderless th {
+  border: none;
+}
+
+.VesselInfo table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background-color: transparent; /* Ensure table background is also transparent */
+}
+
+.sos-row {
+  animation: blink 1s infinite;
+  background-color: red; /* Fallback background color */
+  color: white; /* Ensure text is readable */
+}
+
+@keyframes blink {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+table {
+  /* min-width: 1200px; Ensure the table is wide enough to trigger scrolling */
+  border-collapse: collapse; /* Optional: clean up table borders */
+  table-layout: auto; /* Allow flexible width for the columns */
+}
+
+th, td {
+  padding: 8px; /* Add padding for better readability */
+  text-align: left; /* Align text to the left */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
