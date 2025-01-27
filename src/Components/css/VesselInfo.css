@@ -28,9 +28,6 @@
 }
 
 
-.VesselInfo::-webkit-scrollbar {
-}
-
 
 /* Table styling */
 .VesselInfo table {
@@ -48,11 +45,6 @@
 .VesselInfo th {
   font-weight: bold;
   color: #555;
-}
-
-.VesselInfo tr:nth-child(even) {
-  /* background-color: #f9f9f9; */
-  /* color: #555; */
 }
 
 .VesselInfo tr {

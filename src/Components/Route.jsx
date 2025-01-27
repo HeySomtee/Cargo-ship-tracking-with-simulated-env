@@ -5,7 +5,7 @@ const Route = () => {
     const [mapView, setMapView] = useState('');
 
     const toggleMapView = () => {
-        mapView ? setMapView('') : setMapView('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+        mapView ? setMapView('') : setMapView('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}')
         console.log(mapView);
     }
 

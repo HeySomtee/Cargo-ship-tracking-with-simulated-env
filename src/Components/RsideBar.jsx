@@ -42,7 +42,7 @@ const RsideBar = () => {
         <div className="RsideBar text-white h-100 w-100">
             <div className="w-100 h-40 primary-gradient border-bottomc">
                 <div className="scale-70 w-100 h-100">
-                    <Route />
+                    {/* <Route /> */}
                 </div>
             </div>
             <div className="row w-100 h-5 mx-2 border-bottomc text align-items-center">

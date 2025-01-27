@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './css/Menu.css';
 import SOS from './SOS';
 import Route from './Route';
@@ -14,13 +15,40 @@ const Menu = ({
     vessels,
     setVessels 
 }) => {
+    const navigate = useNavigate();
     const [activeMenu, setActiveMenu] = useState('personnel');
     const [personnel, setPersonnel] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [restricted, setRestricted] = useState(true);
+
+    useEffect(() => {
+        const authCode = localStorage.getItem('authCode');
+        const role = localStorage.getItem('role');
+        if (!authCode || authCode === '') {
+            navigate('/');
+        } else {
+            const validateAuthCode = async () => {
+                try {
+                    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/${role == "user" ? "validate_user" : "validate_employee"}/${authCode}`);
+                    const result = await response.json();
+                    if (!result.valid) {
+                        navigate('/');
+                    }
+                } catch (error) {
+                    console.error('Error validating auth code:', error);
+                    navigate('/');
+                }
+            };
+            validateAuthCode();
+        }
+    }, []);
 
     useEffect(() => {
         if (vesselId && activeMenu === 'personnel') {
             fetchPersonnelData(vesselId);
+        }
+        if (localStorage.role && localStorage.role !== "user") {
+            setRestricted(false);
         }
     }, [vesselId, activeMenu]);
 
@@ -43,6 +71,10 @@ const Menu = ({
         setLoading(false);
     };
     const handleMenuClick = (menu) => {
+        if ((menu == 'sos' || menu == 'chat') && !localStorage.role) {
+            alert('You do not have access to this feature');
+            return;
+        }
         setActiveMenu(menu);
     };
 
@@ -62,7 +94,7 @@ const Menu = ({
                                 Vessel Personnel
                             </li>
                             <li
-                                className={`menu-item ${activeMenu === 'sos' ? 'active' : ''}`}
+                                className={`menu-item ${activeMenu === 'sos' ? 'active' : ''} ${restricted ? 'restricted' : ''}`}
                                 onClick={() => handleMenuClick('sos')}
                             >
                                 SOS Signal
@@ -80,7 +112,7 @@ const Menu = ({
                                 Weather
                             </li>
                             <li
-                                className={`menu-item ${activeMenu === 'chat' ? 'active' : ''}`}
+                                className={`menu-item ${activeMenu === 'chat' ? 'active' : ''} ${restricted ? 'restricted' : ''}` }
                                 onClick={() => handleMenuClick('chat')}
                             >
                                 Chat Room

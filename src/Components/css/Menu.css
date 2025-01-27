@@ -370,3 +370,24 @@ ul {
   box-shadow: rgba(228, 121, 17, .5) 0 0 3px 2px;
   outline: 0;
 }
+
+.restricted {
+  position: relative; 
+  opacity: 0.5;
+  pointer-events: none; 
+  padding: 10px;
+}
+
+.restricted::before {
+  content: "Restricted";
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 2px 5px;
+  font-size: 10px;
+  border-radius: 5px;
+  transform: rotate(10deg);
+}

@@ -145,3 +145,7 @@
   scale: .75;
   overflow: hidden;
 }
+
+.bg-dark2 {
+  background: #111619 !important;
+}

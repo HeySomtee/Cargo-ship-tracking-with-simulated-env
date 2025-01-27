@@ -1,0 +1,112 @@
+.Landing-1 {
+  width: 100%;
+  height: 100dvh;
+  background: url(../../assets/hero-4.jpg) no-repeat center center;
+  background-size: cover;
+  opacity: 0.95;
+}
+
+.hero-text {
+  margin-top: -7rem;
+}
+
+.Landing-2 {
+  width: 100%;
+  height: 100dvh;
+}
+
+h1 {
+  font-size: 4em !important;
+  font-weight: 700;
+}
+
+.Landing-2 .row > div {
+  color: #fff !important;
+}
+
+.Landing-2 .row {
+  --bs-gutter-x: 0rem !important;
+}
+
+.borderc {
+  border: 0.1px solid #ffffff30 !important;
+}
+.border-bottomc {
+  border-bottom: 0.1px solid #ffffff30 !important;
+}
+.border-topc {
+  border-top: 0.1px solid #ffffff30 !important;
+}
+.border-leftc {
+  border-left: 0.1px solid #ffffff30 !important;
+}
+.border-rightc {
+  border-right: 0.1px solid #ffffff30 !important;
+}
+
+.bg-2 {
+  background: url(../../assets/bg-3.png) no-repeat center center;
+  background-size: cover;
+}
+
+.bg-3 {
+  background: url(../../assets/bg-2.png) no-repeat center center;
+  background-size: cover;
+}
+
+.bg-6 {
+  background: url(../../assets/bg-6.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.object {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 40%;
+  background: url(../../assets/obj-2.png) no-repeat center center;
+  background-size: cover;
+  opacity: 0.9;
+}
+
+.admin-check {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 20%;
+  height: calc(100% - 10px);
+}
+
+.form-card {
+  padding: 30px 30px;
+  text-align: center;
+  background-color: rgba(92, 92, 92, 0.301); /* Transparent white */
+  backdrop-filter: blur(10px); /* Frost effect */
+  border: 1px solid rgba(255, 255, 255, 0.041); /* Light border for enhanced glass effect */
+  border-radius: 15px; /* Smooth rounded edges */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+  margin-right: 10px;
+}
+
+
+.form-label span {
+  font-size: smaller;
+}
+
+.input-border-bottom {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #000; /* Adjust color and thickness as needed */
+  border-radius: 0; /* Remove rounded corners */
+  outline: none; /* Remove focus outline */
+  color: #fff;
+}
+
+.input-border-bottom:focus {
+  border-bottom: 2px solid #007bff; /* Highlight color on focus */
+}
+
+.btn-c {
+  margin-right: 15px;
+}
